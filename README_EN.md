@@ -67,8 +67,12 @@ Fields:
 ## Rate Limits
 
 - Text minimum 200 characters
-- ~18 requests per burst, then 30 min cooldown (auto-handled)
-- Batch mode throttles automatically
+- Single IP tested data (5s interval):
+  - ~18 consecutive successes before rate limit (evil_level=100)
+  - Cooldown ~30 minutes
+  - ~36 requests/hour, ~**785 requests/day** per IP
+- Batch mode auto-throttles and auto-cools, no manual intervention needed
+- For higher throughput, use with a proxy pool (N exit IPs × 785 = N × 785/day)
 
 ## Requirements
 
