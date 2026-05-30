@@ -8,6 +8,10 @@
   腾讯朱雀 AI 检测 CLI — 文本/图片查重, 批量串行, 自动冷却
 </p>
 
+<p align="center">
+  <a href="README_EN.md">English</a> | 中文
+</p>
+
 ---
 
 ## 安装

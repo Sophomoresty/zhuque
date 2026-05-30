@@ -8,6 +8,10 @@
   Tencent Zhuque AI-generated content detection CLI — text & image, batch serial, auto-cooldown
 </p>
 
+<p align="center">
+  English | <a href="README.md">中文</a>
+</p>
+
 ---
 
 ## Install
