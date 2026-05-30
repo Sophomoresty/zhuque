@@ -7,7 +7,22 @@ name = "zhuque"
 version = "0.1.0"
 description = "Tencent Zhuque AI detection CLI — text and image, batch serial, auto-cooldown"
 requires-python = ">=3.10"
-dependencies = ["matrix-ai-cli @ file:///home/sophomores/code/clis/matrix-ai-cli"]
+dependencies = [
+  "requests",
+  "curl_cffi",
+  "PySocks",
+  "websockets",
+  "jinja2",
+]
 
 [project.scripts]
 zhuque = "zhuque.cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["zhuque*", "matrix_ai_cli*"]
+
+[tool.setuptools.package-data]
+matrix_ai_cli = ["*.js"]

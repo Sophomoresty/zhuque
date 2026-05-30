@@ -1,0 +1,79 @@
+<p align="center">
+  <img src="assets/logo.png" width="180" />
+</p>
+
+<h1 align="center">朱雀 Zhuque</h1>
+
+<p align="center">
+  腾讯朱雀 AI 检测 CLI — 文本/图片查重, 批量串行, 自动冷却
+</p>
+
+---
+
+## 安装
+
+```bash
+# 需要 Python 3.10+, uv, Node.js (jsdom)
+uv tool install git+https://github.com/Sophomoresty/zhuque.git
+```
+
+安装后即可使用 `zhuque` 命令。
+
+## 使用
+
+```bash
+# 文字检测 (内联)
+zhuque check "你的文本内容, 至少200字..."
+
+# 文字检测 (文件)
+zhuque check --file article.txt
+
+# 图片检测
+zhuque check --image photo.png
+
+# 批量图片
+zhuque check --image-dir ./pictures
+
+# 批量检测 (文件列表, 每行一个路径)
+zhuque batch manifest.txt
+
+# 验证环境
+zhuque doctor
+```
+
+## 输出
+
+JSON 格式直出:
+
+```json
+{
+  "ok": true,
+  "type": "text",
+  "confidence": 1.0,
+  "labels_ratio": {"0": 0.0, "1": 1.0, "2": 0.0},
+  "segment_labels": [{"text": "...", "label": 1, "conf": 0.9997}],
+  "availableUses": 4
+}
+```
+
+字段说明:
+- `confidence` — AI 生成置信度 (0-1)
+- `labels_ratio` — 0=真人, 1=AI生成, 2=不确定
+- `segment_labels` — 分段判定
+- `ai_generated` — 图片 AI 生成概率 (0-1)
+
+## 限制
+
+- 文本最少 200 字
+- 单 IP 连续 ~18 次后需冷却 30 分钟 (CLI 内置自动等待)
+- 批量模式自动节流, 无需手动干预
+
+## 依赖
+
+- Python 3.10+
+- Node.js (用于 TDC captcha 协议)
+- jsdom (`npm install -g jsdom` 或项目内安装)
+
+## License
+
+MIT
