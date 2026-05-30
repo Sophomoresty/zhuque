@@ -83,3 +83,21 @@ Fields:
 ## License
 
 MIT
+
+---
+
+## Acknowledgements
+
+The agent capabilities used to develop this project are powered by [GenericAgent](https://github.com/lsdefine/GenericAgent).
+
+### 🚩 Links
+
+[![GenericAgent](https://img.shields.io/badge/Agent_Framework-GenericAgent-orange?style=for-the-badge&logo=github)](https://github.com/lsdefine/GenericAgent)
+[![LinuxDo](https://img.shields.io/badge/Community-LinuxDo-blue?style=for-the-badge)](https://linux.do/)
+
+**More by the same author**:
+
+- [bpc-fetch](https://github.com/Sophomoresty/bpc-fetch) — Bypass paywall sites, batch fetch articles as Markdown
+- [gemini-web2api](https://github.com/Sophomoresty/gemini-web2api) — Convert Google Gemini web into OpenAI-compatible API
+- [qmdec](https://github.com/Sophomoresty/qmdec) — QQ Music encrypted file decryptor with auto-tagging
+- [doifans-dl](https://github.com/Sophomoresty/doifans-dl) — DoiFans paywall bypass video downloader

@@ -85,3 +85,21 @@ JSON 格式直出:
 ## License
 
 MIT
+
+---
+
+## 致谢
+
+本项目的开发 agent 能力由 [GenericAgent](https://github.com/lsdefine/GenericAgent) 提供。
+
+### 🚩 友情链接
+
+[![GenericAgent](https://img.shields.io/badge/Agent_Framework-GenericAgent-orange?style=for-the-badge&logo=github)](https://github.com/lsdefine/GenericAgent)
+[![LinuxDo](https://img.shields.io/badge/社区-LinuxDo-blue?style=for-the-badge)](https://linux.do/)
+
+**同作者其他项目**:
+
+- [bpc-fetch](https://github.com/Sophomoresty/bpc-fetch) — 付费墙绕过, 936 站批量抓取文章
+- [gemini-web2api](https://github.com/Sophomoresty/gemini-web2api) — Google Gemini 网页版转 OpenAI 兼容 API
+- [qmdec](https://github.com/Sophomoresty/qmdec) — QQ 音乐加密文件解密 + 自动打标签
+- [doifans-dl](https://github.com/Sophomoresty/doifans-dl) — DoiFans 付费墙视频下载
