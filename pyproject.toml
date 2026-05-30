@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zhuque"
+version = "0.1.0"
+description = "Tencent Zhuque AI detection CLI — text and image, batch serial, auto-cooldown"
+requires-python = ">=3.10"
+dependencies = ["matrix-ai-cli @ file:///home/sophomores/code/clis/matrix-ai-cli"]
+
+[project.scripts]
+zhuque = "zhuque.cli:main"
