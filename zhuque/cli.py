@@ -71,7 +71,16 @@ def _detect_image(image_path: Path, xff: str = "") -> dict[str, Any]:
     inner = result.get("result") or result if isinstance(result, dict) else {}
     if isinstance(inner, dict) and inner.get("ai_generated") is not None and inner.get("status") == "success":
         return {"ok": True, "type": "image", "file": str(image_path), "ai_generated": inner["ai_generated"], "availableUses": inner.get("availableUses"), "img_type": inner.get("img_type"), "uuid": inner.get("uuid")}
-    evil = inner.get("evil_level") if isinstance(inner, dict) else None
+    # Check evil_level in result or in logs
+    evil = None
+    if isinstance(inner, dict):
+        evil = inner.get("evil_level")
+    if not evil and isinstance(result, dict):
+        for log in (result.get("logs") or []):
+            recv = log.get("recv") or {}
+            if recv.get("evil_level") == "100":
+                evil = "100"
+                break
     if evil == "100":
         return {"ok": False, "error": "rate_limited", "evil_level": 100, "file": str(image_path)}
     return {"ok": False, "error": "detect_failed", "file": str(image_path), "raw": result}
